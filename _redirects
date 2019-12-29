@@ -1,0 +1,6 @@
+# Redirect domain aliases to primary domain
+https://octosign.sk/* https://octosign.com/:splat 301!
+https://www.octosign.sk/* https://octosign.com/:splat 301!
+
+# Optional: Redirect default Netlify subdomain to primary domain
+https://loving-heisenberg-4ee6c1.netlify.com/* https://octosign.com/:splat 301!
