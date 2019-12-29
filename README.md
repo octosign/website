@@ -7,6 +7,8 @@
   Octosign.com website source running the Gatsby
 </h1>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/340a7931-844c-476b-8841-cbb410f4aec1/deploy-status)](https://app.netlify.com/sites/octosign/deploys)
+
 Generated and kept as close as possible to the default starter for [Gatsby](https://www.gatsbyjs.org/) - the blazing fast app generator for React.
 
 ## 🚀 Quick start
