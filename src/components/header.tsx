@@ -24,7 +24,7 @@ const Header: FC<{ siteTitle: string }> = ({ siteTitle }) => (
   <Container maxWidth="lg">
     <AppBar position="sticky" color="inherit" elevation={0}>
       <Toolbar>
-        <Title variant="h6" componet="h1" color="inherit" noWrap>
+        <Title variant="h6" component="h1" color="inherit" noWrap>
           {siteTitle}
         </Title>
         <Nav>

@@ -10,7 +10,7 @@ import styled from "styled-components"
 import Link from "./link"
 
 const Container = styled(MuiContainer)`
-  border-top: 1px solid ${p => { console.log(p.theme); return p.theme.palette.divider;}};
+  border-top: 1px solid ${p => p.theme.palette.divider};
   margin-top: ${p => p.theme.spacing(8)};
   padding-top: ${p => p.theme.spacing(3)};
   padding-bottom: ${p => p.theme.spacing(3)};
