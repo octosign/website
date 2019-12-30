@@ -10,7 +10,7 @@ import Footer from "../components/footer"
 
 const GlobalStyles = createGlobalStyle`
   body {
-    background-color: ${p => p.theme.palette.background.paper} !important;
+    background-color: ${p => p.theme.palette.background.paper};
   }
 `
 

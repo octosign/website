@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">
-  Octosign.com website source running the Gatsby
+  Octosign.com website
 </h1>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/340a7931-844c-476b-8841-cbb410f4aec1/deploy-status)](https://app.netlify.com/sites/octosign/deploys)
