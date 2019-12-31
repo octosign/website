@@ -18,30 +18,29 @@ const Container = styled(MuiContainer)`
     padding-top: ${p => p.theme.spacing(6)};
     padding-bottom: ${p => p.theme.spacing(6)};
   }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
 `
 
 const footers = [
   {
-    title: "Company",
-    description: ["Team", "History", "Contact us", "Locations"],
-  },
-  {
-    title: "Features",
+    title: "Resources",
     description: [
-      "Cool stuff",
-      "Random feature",
-      "Team feature",
-      "Developer stuff",
-      "Another one",
+      "What are electronic signatures",
+      "How electronic signatures work",
+      "Legal binding of electronic signatures",
     ],
   },
   {
-    title: "Resources",
+    title: "Help",
     description: [
-      "Resource",
-      "Resource name",
-      "Another resource",
-      "Final resource",
+      "How to use",
+      "Random feature",
+      "Team feature",
+      "Developer stuff",
     ],
   },
   {
@@ -54,15 +53,15 @@ const Footer: FC = () => (
   <Container maxWidth="md" component="footer">
     <Grid container spacing={4} justify="space-evenly">
       {footers.map(footer => (
-        <Grid item xs={6} sm={3} key={footer.title}>
+        <Grid item xs={6} sm={4} key={footer.title}>
           <Typography variant="h6" color="textPrimary" gutterBottom>
             {footer.title}
           </Typography>
           <ul>
             {footer.description.map(item => (
               <li key={item}>
-                <Link href="#" variant="subtitle1" color="textSecondary">
-                  {item}
+                <Link to="/" variant="subtitle1" color="textSecondary">
+                  - {item}
                 </Link>
               </li>
             ))}
@@ -73,9 +72,14 @@ const Footer: FC = () => (
     <Box mt={5}>
       <Typography variant="body2" color="textSecondary" align="center">
         {"Copyright © "}
-        <Link color="inherit" href="https://duras.me/">
+        <Typography
+          variant="body2"
+          component="a"
+          color="inherit"
+          href="https://duras.me/"
+        >
           Jakub Duras
-        </Link>{" "}
+        </Typography>{" "}
         {new Date().getFullYear()}
         {"."}
       </Typography>

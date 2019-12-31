@@ -7,11 +7,16 @@ import {
   Container,
 } from "@material-ui/core"
 import styled from "styled-components"
+import { Link as GatsbyLink } from "gatsby"
 
 import Link from "./link"
 
-const Title = styled(Typography)`
+const Title = styled.div`
   flex-grow: 1;
+
+  h1 {
+    display: inline-block;
+  }
 `
 
 const Nav = styled.nav`
@@ -21,29 +26,37 @@ const Nav = styled.nav`
 `
 
 const Header: FC<{ siteTitle: string }> = ({ siteTitle }) => (
-  <Container maxWidth="lg">
-    <AppBar position="sticky" color="inherit" elevation={0}>
+  <AppBar position="sticky" color="inherit" elevation={0}>
+    <Container maxWidth="lg">
       <Toolbar>
-        <Title variant="h6" component="h1" color="inherit" noWrap>
-          {siteTitle}
+        <Title>
+          <Link to="/">
+            <Typography variant="h6" component="h1" color="inherit" noWrap>
+              {siteTitle}
+            </Typography>
+          </Link>
         </Title>
         <Nav>
-          <Link variant="button" color="textPrimary" href="#">
+          <Link variant="button" color="textPrimary" to="/">
+            Home
+          </Link>
+          <Link variant="button" color="textPrimary" to="/features">
             Features
           </Link>
-          <Link variant="button" color="textPrimary" href="#">
-            Enterprise
+          <Link variant="button" color="textPrimary" to="/resources">
+            Resources
           </Link>
-          <Link variant="button" color="textPrimary" href="#">
-            Support
+          <Link variant="button" color="textPrimary" to="/help">
+            Help
           </Link>
         </Nav>
-        <Button href="#" color="primary" variant="outlined">
+
+        <Button color="secondary" variant="outlined" component={GatsbyLink} to="/download">
           Download
         </Button>
       </Toolbar>
-    </AppBar>
-  </Container>
+    </Container>
+  </AppBar>
 )
 
 export default Header

@@ -13,7 +13,10 @@ import Img from "gatsby-image"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const Image: FC<{ path: string }> = () => {
+const Image: FC<{ path: string; className: string }> = ({
+  path,
+  className,
+}) => {
   const data = useStaticQuery(graphql`
     query {
       allImageSharp {
@@ -26,12 +29,19 @@ const Image: FC<{ path: string }> = () => {
         }
       }
     }
-  `);
+  `)
 
-  return <Img fluid={data.allImageSharp.edges.find((element) => {
-    // Match string after final slash
-    return (element.node.fluid.src.split('/').pop() === this.props.imgsrc);
-  }).node.fluid} />
+  return (
+    <Img
+      className={className}
+      fluid={
+        data.allImageSharp.edges.find(element => {
+          // Match string after final slash
+          return element.node.fluid.src.split("/").pop() === path
+        }).node.fluid
+      }
+    />
+  )
 }
 
 export default Image

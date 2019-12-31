@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Octosign`,
-    description: `Desktop electronic signature software. Sign your document (PDF, DOC, JPG...) using image or cryptography.`,
+    description: `Free desktop electronic signature software. Sign your document (PDF, DOC, JPG...) using image or cryptography.`,
     author: `Jakub Duras`,
   },
   plugins: [
