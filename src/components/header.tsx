@@ -14,8 +14,16 @@ import Link from "./link"
 const Title = styled.div`
   flex-grow: 1;
 
-  h1 {
-    display: inline-block;
+  img {
+    height: 32px;
+    opacity: 0.75;
+    filter: grayscale(1);
+    transition: all 0.2s ease-out;
+
+    &:hover {
+      filter: none;
+      opacity: 1;
+    }
   }
 `
 
@@ -30,11 +38,9 @@ const Header: FC<{ siteTitle: string }> = ({ siteTitle }) => (
     <Container maxWidth="lg">
       <Toolbar>
         <Title>
-          <Link to="/">
-            <Typography variant="h6" component="h1" color="inherit" noWrap>
-              {siteTitle}
-            </Typography>
-          </Link>
+          <GatsbyLink to="/">
+            <img src="/logo-horizontal.svg" alt="Logo Octosign" />
+          </GatsbyLink>
         </Title>
         <Nav>
           <Link variant="button" color="textPrimary" to="/">

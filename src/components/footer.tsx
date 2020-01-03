@@ -51,7 +51,7 @@ const footers = [
 
 const Footer: FC = () => (
   <Container maxWidth="md" component="footer">
-    <Grid container spacing={4} justify="space-evenly">
+    {/*<Grid container spacing={4} justify="space-evenly">
       {footers.map(footer => (
         <Grid item xs={6} sm={4} key={footer.title}>
           <Typography variant="h6" color="textPrimary" gutterBottom>
@@ -68,7 +68,7 @@ const Footer: FC = () => (
           </ul>
         </Grid>
       ))}
-    </Grid>
+    </Grid>*/}
     <Box mt={5}>
       <Typography variant="body2" color="textSecondary" align="center">
         {"Copyright © "}

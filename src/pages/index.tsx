@@ -35,14 +35,23 @@ const IndexPage: FC = () => (
           signature for free on your computer.
         </Typography>
 
-        <Button variant="outlined" color="secondary" component={Link} to="/download">
+        <Button
+          variant="outlined"
+          color="secondary"
+          component={Link}
+          to="/download"
+        >
           Download
         </Button>
       </Grid>
 
       <Grid item xs={12} sm={8}>
         <Screenshot>
-          <Image className="screenshot" path="screenshot.jpg" />
+          <Image
+            className="screenshot"
+            path="screenshot.jpg"
+            alt="Screenshot of intro screen"
+          />
         </Screenshot>
       </Grid>
     </Intro>

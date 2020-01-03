@@ -13,8 +13,9 @@ import Img from "gatsby-image"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const Image: FC<{ path: string; className: string }> = ({
+const Image: FC<{ path: string; alt: string; className?: string }> = ({
   path,
+  alt,
   className,
 }) => {
   const data = useStaticQuery(graphql`
@@ -40,6 +41,7 @@ const Image: FC<{ path: string; className: string }> = ({
           return element.node.fluid.src.split("/").pop() === path
         }).node.fluid
       }
+      alt={alt}
     />
   )
 }
