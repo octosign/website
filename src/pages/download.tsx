@@ -1,8 +1,17 @@
 import React, { FC } from "react"
-import { Grid, Button } from "@material-ui/core"
+import { Grid, Button, Typography } from "@material-ui/core"
+import { parseISO, format } from 'date-fns';
 
 import SEO from "../components/seo"
 import styled from "styled-components"
+import release from "../release.json"
+
+const releaseDate = format(parseISO(release.date), 'P');
+const releasesBase = 'https://github.com/durasj/octosign/releases/download'
+const windowsLink = `${releasesBase}/${release.version}/Octosign-Web-Setup-0.1.0-dev.exe`
+const linuxLink = `${releasesBase}/${release.version}/Octosign-0.1.0-dev.AppImage`
+const linuxDebLink = `${releasesBase}/${release.version}/com.octosign_0.1.0-dev_amd64.deb`
+const macLink = `${releasesBase}/${release.version}/Octosign-0.1.0-dev.dmg`
 
 const Container = styled.div`
     display: flex;
@@ -27,7 +36,7 @@ const PlatformIcon = styled.img`
     margin: 0 ${p => p.theme.spacing(8)};
 `
 
-const PlatformInfo = styled.div`
+const PlatformInfo = styled(Typography)`
     text-align: center;
 `
 
@@ -40,23 +49,22 @@ const DownloadPage: FC = () => (
     <Grid container spacing={4} justify="space-evenly">
       <PlatformItem item xs={6} sm={3}>
         <PlatformIcon src="/os/windows.svg" />
-        <Button variant="outlined" color="secondary">Windows</Button>
-        <PlatformInfo>64-bit v0.1.0-dev 30.12.2019</PlatformInfo>
+        <Button href={windowsLink} variant="outlined" color="secondary">Windows</Button>
       </PlatformItem>
 
       <PlatformItem item xs={6} sm={3}>
         <PlatformIcon src="/os/linux.svg" />
-        <Button variant="outlined" color="secondary">Linux AppImage</Button>
-        <Button variant="text" color="secondary">Linux .deb</Button>
-        <PlatformInfo>64-bit v0.1.0-dev 30.12.2019</PlatformInfo>
+        <Button href={linuxLink} variant="outlined" color="secondary">Linux AppImage</Button>
+        <Button href={linuxDebLink} variant="text" color="secondary">Linux .deb</Button>
       </PlatformItem>
 
       <PlatformItem item xs={6} sm={3}>
         <PlatformIcon src="/os/apple.svg" />
-        <Button variant="outlined" color="secondary">Mac</Button>
-        <PlatformInfo>64-bit v0.1.0-dev 30.12.2019</PlatformInfo>
+        <Button href={macLink} variant="outlined" color="secondary">Mac</Button>
       </PlatformItem>
     </Grid>
+
+    <PlatformInfo>Version {release.version} released on {releaseDate}. All releases are 64-bit.</PlatformInfo>
   </Container>
 )
 
