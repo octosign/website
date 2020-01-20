@@ -19,7 +19,8 @@ Generated and kept as close as possible to the default starter for [Gatsby](http
 
     ```shell
     cd octosign-website/
-    gatsby develop
+    npm install
+    npm run develop
     ```
 
 1.  **Open the source code and start editing!**
