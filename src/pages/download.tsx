@@ -8,7 +8,7 @@ import release from "../release.json"
 
 const releaseDate = format(parseISO(release.date), 'P');
 const releasesBase = 'https://github.com/durasj/octosign/releases/download'
-const windowsLink = `${releasesBase}/${release.version}/Octosign-Web-Setup-${release.version}.exe`
+const windowsLink = `${releasesBase}/${release.version}/Octosign-Setup-${release.version}.exe`
 const linuxLink = `${releasesBase}/${release.version}/Octosign-${release.version}.AppImage`
 const linuxDebLink = `${releasesBase}/${release.version}/com.octosign_${release.version}_amd64.deb`
 const macLink = `${releasesBase}/${release.version}/Octosign-${release.version}.dmg`
