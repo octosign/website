@@ -1,19 +1,19 @@
 import React, { FC } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import { Grid, Typography, Button } from "@material-ui/core"
+import { Grid, Typography, Button, Box } from "@material-ui/core"
 
 import SEO from "../components/seo"
 import Image from "../components/image"
 
-const Intro = styled(Grid)`
+export const Intro = styled(Grid)`
   padding: ${p => p.theme.spacing(2)} 0;
 
   display: flex;
   align-items: center;
 `
 
-const Screenshot = styled.div`
+export const Screenshot = styled.div`
   background: #ffffff url("bg-illustration.svg") no-repeat center right/contain;
   padding: ${p => p.theme.spacing(4)};
 
@@ -29,20 +29,22 @@ const IndexPage: FC = () => (
 
     <Intro container spacing={4} justify="space-evenly">
       <Grid item xs={12} sm={4}>
-        <Typography variant="h4">Electronic signatures</Typography>
+        <Typography variant="h4" component="h1">Electronic signatures</Typography>
         <Typography variant="subtitle1">
-          Sign your documents (like PDFs) using image or cryptography as
-          signature for free on your computer.
+          Sign your documents (like PDFs) using electronic signatures for free
+          on your computer.
         </Typography>
 
-        <Button
-          variant="outlined"
-          color="secondary"
-          component={Link}
-          to="/download"
-        >
-          Download
-        </Button>
+        <Box mt={1}>
+          <Button
+            variant="outlined"
+            color="secondary"
+            component={Link}
+            to="/download"
+          >
+            Download
+          </Button>
+        </Box>
       </Grid>
 
       <Grid item xs={12} sm={8}>
@@ -50,15 +52,15 @@ const IndexPage: FC = () => (
           <Image
             className="screenshot"
             path="screenshot.jpg"
-            alt="Screenshot of intro screen"
+            alt="Screenshot of the application"
           />
         </Screenshot>
       </Grid>
     </Intro>
 
-    {/* TODO: Use image or draw your signature */}
-
     {/* TODO: Use cryptography as signature */}
+
+    {/* TODO: Use image or draw your signature */}
 
     {/* TODO: Want to know more about the electronic signatures? */}
 
