@@ -1,7 +1,11 @@
 import React, { FC } from "react"
 import { Helmet } from "react-helmet"
-import { ThemeProvider as MuiThemeProvider, CssBaseline, Container } from "@material-ui/core"
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import {
+  ThemeProvider as MuiThemeProvider,
+  CssBaseline,
+  Container,
+} from "@material-ui/core"
+import { createGlobalStyle, ThemeProvider } from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 
 import theme from "../theme"
@@ -15,7 +19,11 @@ const GlobalStyles = createGlobalStyle`
   }
 `
 
-const Layout: FC = ({ children }) => {
+// TODO: Type props
+const Layout: FC = ({ children, pathContext, path, ...props }) => {
+  const currentLanguage = pathContext.langKey || "en"
+  const currentPath = path
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -42,7 +50,11 @@ const Layout: FC = ({ children }) => {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <GlobalStyles />
-          <Header siteTitle={data.site.siteMetadata.title} />
+          <Header
+            siteTitle={data.site.siteMetadata.title}
+            currentLanguage={currentLanguage}
+            currentPath={currentPath}
+          />
 
           <Container>{children}</Container>
 

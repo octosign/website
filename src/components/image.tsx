@@ -13,6 +13,7 @@ import Img from "gatsby-image"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
+// TODO: Optimize retrieval
 const Image: FC<{ path: string; alt: string; className?: string }> = ({
   path,
   alt,
