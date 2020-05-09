@@ -69,7 +69,7 @@ const Footer: FC = () => (
         </Grid>
       ))}
     </Grid>*/}
-    <Box mt={5}>
+    <Box mt={1}>
       <Typography variant="body2" color="textSecondary" align="center">
         {"Copyright © "}
         <Typography
