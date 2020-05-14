@@ -7,11 +7,11 @@ import styled from "styled-components"
 import release from "../release.json"
 
 const releaseDate = format(parseISO(release.date), 'P');
-const releasesBase = 'https://github.com/durasj/octosign/releases/download'
-const windowsLink = `${releasesBase}/v${release.version}/Octosign-Setup-${release.version}.exe`
-const linuxLink = `${releasesBase}/v${release.version}/Octosign-${release.version}.AppImage`
-const linuxDebLink = `${releasesBase}/v${release.version}/com.octosign_${release.version}_amd64.deb`
-const macLink = `${releasesBase}/v${release.version}/Octosign-${release.version}.dmg`
+const releasesBase = 'https://releases-proxy.octosign.com'
+const windowsLink = `${releasesBase}/Octosign-Setup-${release.version}.exe`
+const linuxLink = `${releasesBase}/Octosign-${release.version}.AppImage`
+const linuxDebLink = `${releasesBase}/com.octosign_${release.version}_amd64.deb`
+const macLink = `${releasesBase}/Octosign-${release.version}.dmg`
 
 const Container = styled.div`
     display: flex;
