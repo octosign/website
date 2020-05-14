@@ -10,16 +10,16 @@ title: "European Union law on electronic signatures"
 ## EU regulation eIDAS
 
 Law within the EU regarding the electronic signatures used to differ a fair bit.
-This all changed with the arrival of the EU regulation eIDAS (Electronic Identification, Authentication, and Trust Services).
+This changed with the arrival of the EU regulation eIDAS (Electronic Identification, Authentication, and Trust Services).
 
-It entered into force on the 17th of September, 2014, and regulates, among other things, electronic signatures in the European Union's internal market. It brought several standards for interoperable solutions across the whole EU.
+It entered into force on the 17th of September, 2014, and regulates, among other things, electronic signatures in the European Union's internal market. It brought several standards for interoperable solutions.
 
 ## Signature qualification
 
 One of the most important parts is the tiered approach to the electronic signature qualification.
 No electronic signature can be denied in the court just based on the fact that it is in electronic form and does not follow a specific standard.
 
-In addition to that, we recognize three types of electronic signatures based on their qualification.
+We recognize three types of electronic signatures based on their qualification.
 
 1. **Electronic signature** - Any signature in the electronic form.
 2. **Advanced electronic signature** - An electronic signature that meets several requirements: it uniquely identifies its signee, only the signee can sign using their signature, any changes made to the document after it has been signed must be detected, and it should be possible to reliably identify the signee. From the technical point of view, standards that follow those requirements are PAdES, XAdES, and CAdES.
