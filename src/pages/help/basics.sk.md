@@ -15,7 +15,7 @@ Po stiahnutí otvorte súbor a nasledujte inštrukcie.
 
 Ako prvé je potrebné zvoliť dokument.
 Pre zvolenie dokumentu je možné použiť tlačidlo "Vybrať súbory" alebo preniesť váš súbor do aplikácie.
-Odporúčaný formát dokumentu je PDF.
+Odporúčaný formát dokumentu je PDF, ale iné formáty sú tiež podporované.
 
 Po zvolení dokumentu sa zobrazí karta s názvom vášho dokumentu podobne ako je možné vidieť na obrázku.
 

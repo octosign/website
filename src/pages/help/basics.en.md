@@ -11,13 +11,13 @@ Open the subpage [Download](/sk/download) where you can download the application
 
 After the download is complete, open the file and follow the instructions.
 
-## Signing of document
+## Signing the document
 
 First, it is needed to select a document.
 To select a document, click on the button "SELECT FILES" or drag and drop your document on the application.
-The recommended document type is PDF.
+The recommended document type is PDF, although other file types are supported as well.
 
-After selecting the document, a card with a document name will appear just like in the picture.
+After selecting the document, a card with the document name will appear just like in the picture.
 
 ![screenshot](../../images/screenshot-en-unsigned.jpg "Screenshot with unsigned document.")
 
@@ -27,17 +27,17 @@ When signing with an image, there is only a drawn or picked signature image plac
 When signing with an advanced electronic signature, it is possible to use a qualified electronic signature.
 
 To sign a document, press the button "SIGN" visible on the document card.
-Follow the instructions, and after the signing was successful, the document will be marked as "Signed".
+Follow the instructions, and after the signing is successful, the document will be marked as "Signed".
 
-![screenshot](../../images/screenshot-en-signed.jpg "Card with a signed document.")
+![screenshot](../../images/screenshot-en-signed.jpg "Card with the signed document.")
 
-## Verifying of document signature
+## Verifying the document signature
 
 Verification of the document signature is automatically started after the document is selected, and it does not have to be triggered manually.
 
-![screenshot](../../images/screenshot-en-verifying.jpg "Card with a document that is being verified.")
+![screenshot](../../images/screenshot-en-verifying.jpg "Card with the document that is being verified.")
 
-After the verification is completed, the status of the document will be visible on the card of the document, and it can be: "Signed", "Unsigned", "Invalid", "Unknown", and "Intermediate".
+After the verification is completed, the status of the document will be visible on the card of the document, it can be: "Signed", "Unsigned", "Invalid", "Unknown", and "Indeterminate".
 
 If there is at least one signature attached to the document, it is possible to see more information about it by clicking on the button "OPEN SIGNATURE DETAILS".
 
