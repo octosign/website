@@ -14,7 +14,7 @@ export const Intro = styled(Grid)`
 `
 
 export const Screenshot = styled.div`
-  background: #ffffff url("bg-illustration.svg") no-repeat center right/contain;
+  background: #ffffff url("/bg-illustration.svg") no-repeat center right/contain;
   padding: ${p => p.theme.spacing(4)};
 
   .screenshot {
