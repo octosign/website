@@ -1,9 +1,11 @@
 ---
 path: "/sk/help/basics"
 language: sk
-date: "2020-05-06"
-title: "Základné používanie"
+date: "2020-05-19"
+title: "Základné použitie"
 ---
+
+Platné pre verziu 0.5.0-dev.
 
 ## Stiahnutie a inštalácia aplikácie
 
@@ -53,5 +55,5 @@ Nastaviť je možné jazyk a taktiež hodnoty špecifické pre daný druh podpis
 
 Dostupné nastavenia sú:
 
-- **Cesta k PKCS #11 knižnici** - Cesta sa automaticky predvyplní ak je na počítači detegovaná prítomnosť známeho podporovaného softvéru. Ak nie, je možné ju vyplniť manuálne cestou, ktorú získate od dodávateľa softvéru pre vaše zariadenie. Cesta musí smerovať k súboru spĺňajúcemu štandard PKCS #11 v 64 bitovej verzii.
-- **URL servera na časové pečiatky** - URL je automaticky predvyplnená na hodnotu "http://timestamp.digicert.com". V prípade, že chcete nastaviť iný server, prepíšte adresu vlastnou, ale dbajte na vypísanie všetkých častí adresy vrátane protokolu ("http://" alebo "https://").
+- **Cesta k PKCS #11/#12** - Cesta sa automaticky predvyplní ak je na počítači detegovaná prítomnosť známeho podporovaného softvéru. Ak nie, je možné ju vyplniť manuálne cestou, ktorú získate od dodávateľa softvéru pre vaše zariadenie. Cesta musí smerovať k súboru spĺňajúcemu štandard PKCS #11 v 64 bitovej verzii alebo súboru podľa PKCS #12 štandardu končiacemu `.p12` alebo `.pfx`. Ak nie je vyplnené, MS CAPI je použité na Windowse a na iných platformách končí chybou.
+- **URL servera na časové pečiatky** - URL je automaticky predvyplnená na hodnotu "http://timestamp.digicert.com". V prípade, že chcete nastaviť iný server, prepíšte adresu vlastnou, ale dbajte na vypísanie všetkých častí adresy vrátane protokolu ("http://" alebo "https://"). Ak nie je vyplnené, časová pečiatka nebude priložená k dokumentu.

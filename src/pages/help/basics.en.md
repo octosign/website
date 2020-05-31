@@ -1,9 +1,11 @@
 ---
 path: "/help/basics"
 language: en
-date: "2020-05-06"
+date: "2020-05-19"
 title: "Basic usage"
 ---
+
+Valid for version 0.5.0-dev.
 
 ## Downloading and installing the application
 
@@ -53,5 +55,5 @@ It is possible to set the language and options specific for the type of the sign
 
 Available options are:
 
-- **PKCS #11 Library Path** - The path is automatically prefilled if there is a supported known software installed on the computer. If not, it is possible to fill it manually with the path that you can get from the supplier of the software bundled with your device. The path needs to lead to a library compliant with the PKCS #11 standard in a 64-bit version.
-- **Timestamping Server URL** - The URL is automatically prefilled with value "http://timestamp.digicert.com". In the case you would like to use your own timestamping server, feel free to change it, but please make sure to type in the full URL address, including the protocol ("http://" or "https://").
+- **PKCS #11/#12 Path** - The path is automatically prefilled if there is a supported known software installed on the computer. If not, it is possible to fill it manually with the path that you can get from the supplier of the software bundled with your device. The path needs to lead to a library compliant with the PKCS #11 standard in a 64-bit version or file in the PKCS #12 standard ending with `.p12` or `.pfx`. If left empty, MS CAPI is used on Windows and results in an error on other platforms.
+- **Timestamping Server URL** - The URL is automatically prefilled with value "http://timestamp.digicert.com". In the case you would like to use your own timestamping server, feel free to change it, but please make sure to type in the full URL address, including the protocol ("http://" or "https://"). If left empty, no timestamp will be attached to the document.

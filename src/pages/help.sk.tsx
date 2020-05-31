@@ -17,7 +17,7 @@ const HelpPage: FC = () => (
         <Grid container spacing={3} direction="row">
           <Grid item xs={12} md={4}>
             <HelpCard
-              title="Základné používanie"
+              title="Základné použitie"
               image="screenshot.jpg"
               link="/sk/help/basics"
             >
