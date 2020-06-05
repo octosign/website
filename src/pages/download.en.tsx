@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 import styled from "styled-components"
 import release from "../release.json"
 
-const releaseDate = format(parseISO(release.date), 'YYYY-MM-DD');
+const releaseDate = format(parseISO(release.date), 'yyyy-MM-dd');
 const releasesBase = 'https://releases-proxy.octosign.com'
 const windowsLink = `${releasesBase}/Octosign-Setup-${release.version}.exe`
 const linuxLink = `${releasesBase}/Octosign-${release.version}.AppImage`

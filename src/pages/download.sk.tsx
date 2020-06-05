@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 import styled from "styled-components"
 import release from "../release.json"
 
-const releaseDate = format(parseISO(release.date), 'DD.MM.YYYY');
+const releaseDate = format(parseISO(release.date), 'dd.MM.yyyy');
 const releasesBase = 'https://github.com/durasj/octosign/releases/download'
 const windowsLink = `${releasesBase}/v${release.version}/Octosign-Setup-${release.version}.exe`
 const linuxLink = `${releasesBase}/v${release.version}/Octosign-${release.version}.AppImage`
