@@ -5,7 +5,7 @@ date: "2020-05-19"
 title: "Základné použitie"
 ---
 
-Platné pre verziu 0.5.0-dev.
+Platné pre verziu 0.5.1-dev.
 
 ## Stiahnutie a inštalácia aplikácie
 

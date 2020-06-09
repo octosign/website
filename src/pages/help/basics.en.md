@@ -1,11 +1,11 @@
 ---
 path: "/help/basics"
 language: en
-date: "2020-05-19"
+date: "2020-06-09"
 title: "Basic usage"
 ---
 
-Valid for version 0.5.0-dev.
+Valid for version 0.5.1-dev.
 
 ## Downloading and installing the application
 
