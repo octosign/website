@@ -15,7 +15,7 @@ const ResourcesPage: FC = () => (
 
       <Box mt={4}>
         <Grid container spacing={3} direction="row">
-          <Grid item xs={12} md={4}>
+          <Grid item sm={6} md={4}>
             <HelpCard
               title="Zákon Európskej Únie"
               image="eu-flag.jpg"

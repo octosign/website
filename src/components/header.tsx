@@ -8,6 +8,10 @@ import {
   MenuItem,
 } from "@material-ui/core"
 import ExpandMore from "@material-ui/icons/ExpandMore"
+import MenuIcon from "@material-ui/icons/Menu"
+import IconButton from '@material-ui/core/IconButton'
+import Hidden from '@material-ui/core/Hidden'
+import Box from '@material-ui/core/Box'
 import styled from "styled-components"
 import { Link as GatsbyLink, navigate } from "gatsby"
 
@@ -39,11 +43,17 @@ const Header: FC<{
   siteTitle: string
   currentPath: string
   currentLanguage: string
-}> = ({ siteTitle, currentPath, currentLanguage }) => {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
-  const handleMenuClick = useCallback(event => {
-    setAnchorEl(event.currentTarget)
+}> = ({ currentPath, currentLanguage }) => {
+  const [langAnchorEl, setLangAnchorEl] = React.useState<null | HTMLElement>(null)
+  const handleLangMenuClick = useCallback(event => {
+    setLangAnchorEl(event.currentTarget)
   }, [])
+
+  const [toggleAnchorEl, setToggleAnchorEl] = React.useState<null | HTMLElement>(null)
+  const handleToggleMenuClick = useCallback(event => {
+    setToggleAnchorEl(event.currentTarget)
+  }, [])
+
   const handleChangeLanguage = useCallback(
     (language?: string) => {
       if (language && language !== currentLanguage) {
@@ -61,66 +71,100 @@ const Header: FC<{
         }
       }
 
-      setAnchorEl(null)
+      setLangAnchorEl(null)
     },
     [currentLanguage, currentPath]
   )
+
+  const links = currentLanguage === 'sk' ? {
+    home: {
+      to: '/sk',
+      label: 'Domov',
+    },
+    resources: {
+      to: '/sk/resources',
+      label: 'Informácie',
+    },
+    help: {
+      to: '/sk/help',
+      label: 'Pomoc',
+    },
+    download: {
+      to: '/sk/download',
+      label: 'Stiahnuť',
+    },
+  } : {
+    home: {
+      to: '/',
+      label: 'Home',
+    },
+    resources: {
+      to: '/resources',
+      label: 'Information',
+    },
+    help: {
+      to: '/help',
+      label: 'Help',
+    },
+    download: {
+      to: '/download',
+      label: 'Download',
+    },
+  };
 
   return (
     <AppBar position="sticky" color="inherit" elevation={0}>
       <Container maxWidth="lg">
         <Toolbar>
           <Title>
-            <GatsbyLink to={currentLanguage === "sk" ? "/sk" : "/"}>
+            <GatsbyLink to={links.home.to}>
               <img src="/logo-horizontal.svg" alt="Logo Octosign" />
             </GatsbyLink>
           </Title>
 
-          <Nav>
-            <Link
-              variant="button"
-              color="textPrimary"
-              to={currentLanguage === "sk" ? "/sk" : "/"}
-            >
-              {currentLanguage === "sk" ? "Domov" : "Home"}
-            </Link>
-            <Link
-              variant="button"
-              color="textPrimary"
-              to={currentLanguage === "sk" ? "/sk/resources" : "/resources"}
-            >
-              {currentLanguage === "sk" ? "Informácie" : "Information"}
-            </Link>
-            <Link
-              variant="button"
-              color="textPrimary"
-              to={currentLanguage === "sk" ? "/sk/help" : "/help"}
-            >
-              {currentLanguage === "sk" ? "Pomoc" : "Help"}
-            </Link>
-          </Nav>
-
-          <Button
-            color="secondary"
-            variant="outlined"
-            component={GatsbyLink}
-            to={currentLanguage === "sk" ? "/sk/download" : "/download"}
+          {/* Desktop menu */}
+          <Box
+            display={{ xs: 'none', sm: 'none', md: 'flex', lg: 'flex' }}
+            alignItems="center"
           >
-            {currentLanguage === "sk" ? "Stiahnuť" : "Download"}
-          </Button>
+            <Nav>
+              <Link
+                variant="button"
+                color="textPrimary"
+                to={links.home.to}
+              >{links.home.label}</Link>
+              <Link
+                variant="button"
+                color="textPrimary"
+                to={links.resources.to}
+              >{links.resources.label}</Link>
+              <Link
+                variant="button"
+                color="textPrimary"
+                to={links.help.to}
+              >{links.help.label}</Link>
+            </Nav>
+
+            <Button
+              color="secondary"
+              variant="outlined"
+              component={GatsbyLink}
+              to={links.download.to}
+            >{links.download.label}</Button>
+          </Box>
 
           <Button
             aria-controls="language-chooser"
             aria-haspopup="true"
-            onClick={handleMenuClick}
+            onClick={handleLangMenuClick}
           >
             {currentLanguage.toUpperCase()} <ExpandMore />
           </Button>
           <Menu
             id="language-chooser"
-            anchorEl={anchorEl}
+            anchorEl={langAnchorEl}
             keepMounted
-            open={Boolean(anchorEl)}
+            open={Boolean(langAnchorEl)}
             onClose={() => handleChangeLanguage()}
           >
             <MenuItem onClick={() => handleChangeLanguage("en")}>
@@ -130,6 +174,37 @@ const Header: FC<{
               Slovenčina
             </MenuItem>
           </Menu>
+
+          {/* Mobile menu */}
+          <Hidden mdUp implementation="css">
+            <IconButton
+              aria-label="menu"
+              aria-controls="menu-toggle"
+              aria-haspopup="true"
+              onClick={handleToggleMenuClick}
+            >
+              <MenuIcon />
+            </IconButton>
+
+            <Menu
+              id="menu-toggle"
+              anchorEl={toggleAnchorEl}
+              keepMounted
+              open={Boolean(toggleAnchorEl)}
+              onClose={() => setToggleAnchorEl(null)}
+            >
+              <MenuItem component={GatsbyLink} to={links.home.to}>
+                {links.home.label}
+              </MenuItem>
+              <MenuItem component={GatsbyLink} to={links.resources.to}>
+                {links.resources.label}
+              </MenuItem>
+              <MenuItem component={GatsbyLink} to={links.help.to}>
+                {links.help.label}
+              </MenuItem>
+            </Menu>
+          </Hidden>
+
         </Toolbar>
       </Container>
     </AppBar>
