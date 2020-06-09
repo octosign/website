@@ -8,7 +8,7 @@ import { Intro, Screenshot } from "./index.en"
 
 const IndexPage: FC = () => (
   <>
-    <SEO title="Domov" />
+    <SEO title="Domov" description="Podpíšte svoje dokumenty (napríklad PDF) elektronickým podpisom zadarmo na vašom počítači." />
 
     <Intro container spacing={4} justify="space-evenly">
       <Grid item xs={12} sm={4}>

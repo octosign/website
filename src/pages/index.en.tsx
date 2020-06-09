@@ -25,7 +25,7 @@ export const Screenshot = styled.div`
 
 const IndexPage: FC = () => (
   <>
-    <SEO title="Home" />
+    <SEO title="Home" description="Sign your documents (like PDFs) using electronic signatures for free on your computer." />
 
     <Intro container spacing={4} justify="space-evenly">
       <Grid item xs={12} sm={4}>
