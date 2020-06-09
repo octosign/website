@@ -24,6 +24,16 @@ const HelpPage: FC = () => (
               Základné informácie ako používať aplikáciu.
             </HelpCard>
           </Grid>
+
+          <Grid item xs={12} md={4}>
+            <HelpCard
+              title="Často kladené otázky"
+              image="screenshot.jpg"
+              link="/sk/help/faq"
+            >
+              Otázky ohľadom použitia a vlastností aplikácie.
+            </HelpCard>
+          </Grid>
         </Grid>
       </Box>
     </Box>

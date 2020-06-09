@@ -80,6 +80,16 @@ const HelpPage: FC = () => (
               Basic information on how to use the application.
             </HelpCard>
           </Grid>
+
+          <Grid item xs={12} md={4}>
+            <HelpCard
+              title="Frequently asked questions"
+              image="screenshot.jpg"
+              link="/help/faq"
+            >
+              Answers questions on usage and features of the application.
+            </HelpCard>
+          </Grid>
         </Grid>
       </Box>
     </Box>
